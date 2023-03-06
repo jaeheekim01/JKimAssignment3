@@ -16,3 +16,12 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+#homeIndexCards {
+    padding: 20px;
+}
+
+#indexCardImage {
+    height: 350px;
+    width: 350px;
+}

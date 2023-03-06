@@ -126,7 +126,7 @@ namespace JKimAssignment3.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Gender,Age,ImdbLink,MovieId")] Actor actor, IFormFile ActorImage)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Gender,Age,ImdbLink, MovieId")] Actor actor, IFormFile ActorImage)
         {
             if (ActorImage != null && ActorImage.Length > 0)
             {

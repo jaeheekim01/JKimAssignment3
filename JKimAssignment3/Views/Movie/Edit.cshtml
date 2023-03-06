@@ -35,7 +35,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="MovieImage" class="control-label">Poster</label>
-                <input asp-for="MovieImage" class="form-control" />
+                <input type="file" id="MovieImage" name="MovieImage" multiple class="form-control" />
                 <span asp-validation-for="MovieImage" class="text-danger"></span>
             </div>
             <div class="form-group">
