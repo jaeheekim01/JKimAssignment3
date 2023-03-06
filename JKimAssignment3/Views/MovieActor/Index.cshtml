@@ -1,0 +1,44 @@
+﻿@model IEnumerable<JKimAssignment3.Models.MovieActor>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Let's Match the Actor with the Wes Anderson Film</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Actor
+                @*@Html.DisplayNameFor(model => model.Actor)*@
+            </th>
+            <th>
+                Movie
+                @*@Html.DisplayNameFor(model => model.Movie)*@
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Actor.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Movie.Title)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
