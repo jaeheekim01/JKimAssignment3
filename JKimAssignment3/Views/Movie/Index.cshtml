@@ -4,65 +4,83 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>All Movies</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table id="myTable" class="table">
-    <thead>
-        <tr>
-            <th>
-                Title
-                @*@Html.DisplayNameFor(model => model.Title)*@
-            </th>
-            <th>
-                IMDb Link
-                @*@Html.DisplayNameFor(model => model.ImdbLink)*@
-            </th>
-            <th>
-                Genre
-                @*@Html.DisplayNameFor(model => model.Genre)*@
-            </th>
-            <th>
-                Release Year
-                @*@Html.DisplayNameFor(model => model.Year)*@
-            </th>
-            <th>
-                Movie Poster
-                @*@Html.DisplayNameFor(model => model.MovieImage)*@
-                    </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+<body id="movieIndex">
+    <div class="container-fluid" id="centeredTopText">
+        <h1>All Movies</h1>
+        <p style="padding-bottom: 10px;"><i>Symmetry, symmetry, and symmetry</i></p>
+        <p>
+            <a asp-action="Create" class="btn btn-dark">Create New</a>
+        </p>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4">
+                <img src="https://screenmusings.org/movie/blu-ray/Moonrise-Kingdom/images/Moonrise-Kingdom-072.jpg" width="100%" />
+            </div>
+            <div class="col-4">
+                <img src="https://screenmusings.org/movie/blu-ray/Moonrise-Kingdom/images/Moonrise-Kingdom-073.jpg" width="100%" />
+            </div>
+            <div class="col-4">
+                <img src="https://screenmusings.org/movie/blu-ray/Moonrise-Kingdom/images/Moonrise-Kingdom-074.jpg" width="100%" />
+            </div>
+        </div>
+    </div>
+    <br />
+    <table id="myTable" class="table">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ImdbLink)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Genre)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Year)
-                </td>
-                <td>
-                    @if (item.MovieImage != null)
-                    {
-                               <img width="100" height="150" src="@Url.Action("GetMovieImage", "Movie", new {item.Id})" />
-                    }
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
+                <th>
+                    Title
+                    @*@Html.DisplayNameFor(model => model.Title)*@
+                </th>
+                <th>
+                    IMDb Link
+                    @*@Html.DisplayNameFor(model => model.ImdbLink)*@
+                </th>
+                <th>
+                    Genre
+                    @*@Html.DisplayNameFor(model => model.Genre)*@
+                </th>
+                <th>
+                    Release Year
+                    @*@Html.DisplayNameFor(model => model.Year)*@
+                </th>
+                <th>
+                    Movie Poster
+                    @*@Html.DisplayNameFor(model => model.MovieImage)*@
+                        </th>
+                <th></th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ImdbLink)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Genre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Year)
+                    </td>
+                    <td>
+                        @if (item.MovieImage != null)
+                        {
+                                   <img width="100" height="150" src="@Url.Action("GetMovieImage", "Movie", new {item.Id})" />
+                        }
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>

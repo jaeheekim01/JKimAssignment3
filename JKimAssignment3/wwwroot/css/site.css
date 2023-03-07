@@ -14,7 +14,20 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    font-family: 'Libre Baskerville', serif;
+}
+
+#movieActorDetailsIndex {
+    background-color: #8386AF;
+}
+
+#actorMovieEditIndex {
+    background-color: #A2A190;
+}
+
+#movieDetailsIndex {
+    background-color: #A57882;
 }
 
 #homeIndexCards {
@@ -25,3 +38,112 @@ body {
     height: 350px;
     width: 350px;
 }
+
+#indexMain {
+    padding-top: 100px;
+}
+
+#indexBody {
+    background-image: url("https://wallpapercave.com/wp/wp6567735.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#indexImageAndLink {
+    position: relative;
+}
+
+#indexImage {
+    position: absolute;
+    left: 50%;
+    right: 50%;
+}
+
+#indexLinkText {
+    position: absolute;
+    right: 48%;
+    bottom: 0.5%
+}
+
+#indexLinkTextExtra {
+    position: absolute;
+    right: 37%;
+    bottom: 0.5%
+}
+
+#actorIndex {
+    background-color: #A29978;
+}
+
+#centeredTopText {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+#centeredItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#movieIndex {
+    background-color: #CCA78F;
+}
+#movieActorIndex {
+    background-color: #9CA290;
+}
+
+#actorCreateIndex {
+    background-color: #E9B1A4;
+}
+
+#movieActorCreateIndex {
+    background-color: #D39E88;
+}
+
+#movieCreateIndex {
+    background-color: #DCA793;
+}
+
+#actorEditIndex {
+    background-color: #D9A36D;
+}
+
+#actorDetailsIndex {
+    background-color: #FAD3D3;
+}
+
+#movieEditIndex {
+    background-color: #E0BDA4;
+}
+
+.btn {
+    color: white !important;
+}
+
+a:link {
+    color: black;
+}
+
+a:visited {
+    color: #B74507;
+}
+
+
+nav {
+    background-color: #CCCCB7;
+}
+
+.btn-width {
+    width: 120px !important;
+}
+
+#leftAlign {
+    text-align: right;
+}
+

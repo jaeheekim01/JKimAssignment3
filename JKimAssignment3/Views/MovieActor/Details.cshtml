@@ -4,27 +4,50 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Who's In What?</h1>
-
-<div>
-    <h4>Movie & Actor</h4>
+<body id="movieActorDetailsIndex">
+    <div class="container-fluid" id="centeredTopText">
+        <h1>Let's Take a Gander</h1>
+        <p><i>Which Wes Anderson movie has this person?</i></p>
+    </div>
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Actor)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Actor.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Movie)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Movie.Title)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <img src="https://screenmusings.org/movie/blu-ray/The-Grand-Budapest-Hotel/images/The-Grand-Budapest-Hotel-054.jpg" width="100%" />
+            </div>
+          <div class="col-3"></div>
+        </div>
+    </div>
+    <br />
+    <div class="container-fluid" id="centeredItem">
+        <dl class="row">
+            <dt class="col-sm-6" id="leftAlign">
+                @Html.DisplayNameFor(model => model.Actor)
+            </dt>
+            <dd class="col-sm-6" id="rightAlign">
+                @Html.DisplayFor(model => model.Actor.Name)
+            </dd>
+            <dt class="col-sm-6" id="leftAlign">
+                @Html.DisplayNameFor(model => model.Movie)
+            </dt>
+            <dd class="col-sm-6" id="rightAlign">
+                @Html.DisplayFor(model => model.Movie.Title)
+            </dd>
+        </dl>
+    </div>
+    <br />
+    <div class="container-fluid" id="centeredItem">
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+                <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-dark btn-width">Edit</a>
+            </div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-3">
+                <a asp-action="Index" class="btn btn-dark btn-width">Back to List</a>
+            </div>
+            <div class=col-sm-3></div>
+        </div>
+    </div>
+</body>

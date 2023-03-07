@@ -4,66 +4,85 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>All Actors</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table id="myTable" class="table">
-    <thead>
-        <tr>
-            <th>
-                Name
-                @*@Html.DisplayNameFor(model => model.Name)*@
-            </th>
-            <th>
-                Gender
-                @*@Html.DisplayNameFor(model => model.Gender)*@
-            </th>
-            <th>
-                Age
-                @*@Html.DisplayNameFor(model => model.Age)*@
-            </th>
-            <th>
-                IMDb Link
-                @*@Html.DisplayNameFor(model => model.ImdbLink)*@
-            </th>
-            <th>
-                Actor Photo
-                @*@Html.DisplayNameFor(model => model.ActorImage)*@
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Gender)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Age)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ImdbLink)
-                </td>
-                <td>
-                    @if (item.ActorImage != null)
-                    {
-                        <img width="100" height="125" style="border-radius: 50%" src="@Url.Action("GetActorImage", "Actor", new {item.Id})" />
-                    }
-                </td>
+<body id="actorIndex">
+    <div class="container-fluid" id="centeredTopText">
+        <h1>All Actors</h1>
+        <p style="padding-bottom: 10px;"><i>Bill Murray, Jason Schwartzman, Adrien Brody, and the like</i></p>
+        <p>
+            <a asp-action="Create" class="btn btn-dark">Create New</a>
+        </p>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4">
+                <img src="https://screenmusings.org/movie/blu-ray/Moonrise-Kingdom/images/Moonrise-Kingdom-046.jpg" width="100%" />
+            </div>
+            <div class="col-4">
+                <img src="https://screenmusings.org/movie/blu-ray/Moonrise-Kingdom/images/Moonrise-Kingdom-047.jpg" width="100%" />
+            </div>
+            <div class="col-4">
+                <img src="https://screenmusings.org/movie/blu-ray/Moonrise-Kingdom/images/Moonrise-Kingdom-049.jpg" width="100%" />
+            </div>
+        </div>
+    </div>
+    <br />
+        <table id="myTable" class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                        @*@Html.DisplayNameFor(model => model.Name)*@
+                    </th>
+                    <th>
+                        Gender
+                        @*@Html.DisplayNameFor(model => model.Gender)*@
+                    </th>
+                    <th>
+                        Age
+                        @*@Html.DisplayNameFor(model => model.Age)*@
+                    </th>
+                    <th>
+                        IMDb Link
+                        @*@Html.DisplayNameFor(model => model.ImdbLink)*@
+                    </th>
+                    <th>
+                        Actor Photo
+                        @*@Html.DisplayNameFor(model => model.ActorImage)*@
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Gender)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Age)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ImdbLink)
+                        </td>
+                        <td>
+                            @if (item.ActorImage != null)
+                            {
+                                <img width="115" height="125" style="border-radius: 50%" src="@Url.Action("GetActorImage", "Actor", new {item.Id})" />
+                            }
+                        </td>
 
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id" id="linkColor">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.Id" id="linkColor">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.Id" id="linkColor">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+</body>

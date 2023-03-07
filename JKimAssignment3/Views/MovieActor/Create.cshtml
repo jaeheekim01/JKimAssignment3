@@ -4,35 +4,61 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Match the Actor with the Film</h1>
-
-<h4>Movies-Actors</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="ActorID" class="control-label">Actor</label>
-                <select asp-for="ActorID" class="form-control" asp-items="ViewBag.ActorID"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="MovieID" class="control-label">Movie</label>
-                <select asp-for="MovieID" class="form-control" asp-items="ViewBag.MovieID"></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+<body id="movieActorCreateIndex">
+    <div class="container-fluid" id="centeredTopText">
+        <h1>Match the Actor with the Film</h1>
+        <p><i>Many actors are in many Wes Anderson film... just choose your favorite pairing</i></p>
+        <h4>Movie & Actor</h4>
     </div>
-</div>
+    <hr />
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-4">
+                    <img src="https://screenmusings.org/movie/blu-ray/The-Grand-Budapest-Hotel/images/The-Grand-Budapest-Hotel-030.jpg" width="100%"/>
+                </div>
+                <div class="col-4">
+                    <img src="https://screenmusings.org/movie/blu-ray/The-Grand-Budapest-Hotel/images/The-Grand-Budapest-Hotel-029.jpg" width="100%"/>
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+        <br />
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="ActorID" class="control-label">Actor</label>
+                    <select asp-for="ActorID" class="form-control" asp-items="ViewBag.ActorID"></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="MovieID" class="control-label">Movie</label>
+                    <select asp-for="MovieID" class="form-control" asp-items="ViewBag.MovieID"></select>
+                </div>
+                <br />
+                <div id="centeredItem">
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-dark btn-width" />
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <br />
+    <div id="centeredItem">
+        <h3>
+            <i>
+                <a asp-action="Index">Back to List</a>
+            </i>
+        </h3>
+    </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
     }
-}
+</body>

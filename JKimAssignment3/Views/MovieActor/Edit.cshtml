@@ -4,36 +4,62 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
-
-<h4>MovieActor</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="ActorID" class="control-label">Actor</label>
-                <select asp-for="ActorID" class="form-control" asp-items="ViewBag.ActorID"></select>
-                <span asp-validation-for="ActorID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MovieID" class="control-label">Movie</label>
-                <select asp-for="MovieID" class="form-control" asp-items="ViewBag.MovieID"></select>
-                <span asp-validation-for="MovieID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+<body id="actorMovieEditIndex">
+    <div class="container-fluid" id="centeredTopText">
+        <h1>Edit a Movie & Actor Pairing</h1>
+        <p><i>Maybe there's a new combination?</i></p>
     </div>
-</div>
+    <hr />
+     <div class="container-fluid">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-4">
+                <img src="https://mvcdn.fancaps.net/1055337.jpg" width="100%" />
+            </div>
+            <div class="col-4">
+                <img src="https://mvcdn.fancaps.net/1055338.jpg" width="100%" />
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <label asp-for="ActorID" class="control-label">Actor</label>
+                    <select asp-for="ActorID" class="form-control" asp-items="ViewBag.ActorID"></select>
+                    <span asp-validation-for="ActorID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="MovieID" class="control-label">Movie</label>
+                    <select asp-for="MovieID" class="form-control" asp-items="ViewBag.MovieID"></select>
+                    <span asp-validation-for="MovieID" class="text-danger"></span>
+                </div>
+                <br />
+                <div id="centeredItem">
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-dark btn-width" />
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <br />
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+    <div id="centeredItem">
+        <h3>
+            <i>
+                <a asp-action="Index">Back to List</a>
+            </i>
+        </h3>
+    </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+</body>
